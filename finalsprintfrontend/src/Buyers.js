@@ -1,4 +1,4 @@
-//Manny Nwokedi- Buyers File
+//Buyers js File
 
 importReact, { useEffect, useState } from'react';
 import { getBuyers, createBuyer, updateBuyer, deleteBuyer } from'../apiService';
