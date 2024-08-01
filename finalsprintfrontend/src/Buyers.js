@@ -1,9 +1,9 @@
 //Buyers js File
 
-importReact, { useEffect, useState } from'react';
+import React, { useEffect, useState } from 'react';
 import { getBuyers, createBuyer, updateBuyer, deleteBuyer } from'../apiService';
  
-functionBuyers() {
+function Buyers() {
 const [buyers, setBuyers] = useState([]);
 const [newBuyer, setNewBuyer] = useState({ name: '', email: '', phone: '' });
  
