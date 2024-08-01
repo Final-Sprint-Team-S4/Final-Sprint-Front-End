@@ -1,21 +1,21 @@
 // StockMarket.js
 
-importReact, { useEffect, useState } from'react';
+import React, { useEffect, useState } from 'react';
  
-functionStockMarket() {
-const [stockMarkets, setStockMarkets] = useState([]);
+function StockMarket() {
+  const [stockMarkets, setStockMarkets] = useState([]);
  
   useEffect(() => {
-fetchStockMarkets();
+    fetchStockMarkets();
   }, []);
  
   constfetchStockMarkets = async () => {
-const response = awaitgetStockMarkets();
-setStockMarkets(response.data);
+    const response = awaitgetStockMarkets();
+    setStockMarkets(response.data);
   };
  
   return (
-<div><h2>Stock Markets</h2><ul>        {stockMarkets.map(market => (          <li key={market.id}>            {market.name} - {market.location}          </li> ))} </ul></div>
+    <div><h2>Stock Markets</h2><ul>        {stockMarkets.map(market => (          <li key={market.id}>            {market.name} - {market.location}          </li> ))} </ul></div>
   );
 }
  
