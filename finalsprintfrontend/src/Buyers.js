@@ -1,7 +1,7 @@
 //Buyers js File
 
 import React, { useEffect, useState } from 'react';
-import { createBuyer, deleteBuyer, getBuyers, updateBuyer } from '../apiService';
+import { createBuyer, deleteBuyer, getBuyers, updateBuyer } from './apiService';
  
 function Buyers() {
 const [buyers, setBuyers] = useState([]);
