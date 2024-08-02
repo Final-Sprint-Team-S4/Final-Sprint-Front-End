@@ -1,7 +1,7 @@
 //Stock.js
 
 import React, { useEffect, useState } from 'react';
-import { getStocks } from '../apiService';
+import { getStocks } from './apiService';
 
 function Stock() {
   const [stocks, setStocks] = useState([]);

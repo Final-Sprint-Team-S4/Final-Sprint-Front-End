@@ -1,7 +1,7 @@
 // StockMarket.js
 
 import React, { useEffect, useState } from 'react';
-import { getStockMarkets } from '../apiService';
+import { getStockMarkets } from './apiService';
  
 function StockMarket() {
   const [stockMarkets, setStockMarkets] = useState([]);
