@@ -1,9 +1,9 @@
 //Stock.js
 
-importReact, { useEffect, useState } from'react';
+import React, { useEffect, useState } from'react';
 import { getStocks } from'../apiService';
 
-functionStock() {
+function Stock() {
 const [stocks, setStocks] = useState([]);
 
   useEffect(() => {
@@ -20,4 +20,4 @@ setStocks(response.data);
   );
 }
 
-export defaultStock;
+export default Stock;
