@@ -1,7 +1,7 @@
 //Buyers js File
-importReact, { useEffect, useState } from'react';
+import React, { useEffect, useState } from'react';
  
-functionBuyers() {
+function Buyers() {
 const [buyers, setBuyers] = useState([]);
 const [newBuyer, setNewBuyer] = useState({ name: '', email: '', phone: '' });
  
@@ -36,4 +36,4 @@ fetchBuyers();
   );
 }
  
-exportdefaultBuyers;
+export default Buyers;
