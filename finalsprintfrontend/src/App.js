@@ -1,8 +1,8 @@
-
-import './App.css';
-import Buyers from './Buyers';
-import Stock from './Stock';
-import StockMarket from './StockMarket';
+//App
+import React from 'react';
+import Buyers from './components/Buyers';
+import Stock from './components/Stock';
+import StockMarket from './components/StockMarket';
 
 function App() {
   return (
