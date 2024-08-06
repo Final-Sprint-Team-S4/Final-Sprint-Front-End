@@ -21,7 +21,7 @@ function StockMarket() {
       <ul>
         {stockMarkets.map(market => (
           <li key={market.id}>
-            {market.name} - {market.location}
+            {market.id} - {market.name}
           </li>
         ))}
       </ul>

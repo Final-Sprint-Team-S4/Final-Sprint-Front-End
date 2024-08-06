@@ -45,7 +45,7 @@ function Buyers() {
         {buyers.map((buyer) => (
           <li key={buyer.id}>
             {" "}
-            {buyer.name} - {buyer.email} - {buyer.phone}{" "}
+            {buyer.name} - {buyer.id} - {buyer.phone} {" "}
             <button onClick={() => handleUpdateBuyer(buyer.id)}>Update</button>
             <button onClick={() => handleDeleteBuyer(buyer.id)}>Delete</button>
           </li>
