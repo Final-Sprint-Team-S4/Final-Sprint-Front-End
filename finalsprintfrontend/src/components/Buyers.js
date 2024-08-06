@@ -1,5 +1,5 @@
-//Buyers js File
-import React, { useEffect, useState } from'react';
+import React, { useEffect, useState } from 'react';
+import { createBuyer, deleteBuyer, getBuyers, updateBuyer } from "../apiService";
  
 function Buyers() {
 const [buyers, setBuyers] = useState([]);
@@ -9,25 +9,26 @@ const [newBuyer, setNewBuyer] = useState({ name: '', email: '', phone: '' });
 fetchBuyers();
   }, []);
  
-  constfetchBuyers = async () => {
-const response = awaitgetBuyers();
+  const fetchBuyers = async () => {
+const response = await getBuyers();
+console.log(response)
 setBuyers(response.data);
   };
  
-  consthandleCreateBuyer = async () => {
-awaitcreateBuyer(newBuyer);
+  const handleCreateBuyer = async () => {
+await createBuyer(newBuyer);
 setNewBuyer({ name: '', email: '', phone: '' });
 fetchBuyers();
   };
  
-  consthandleUpdateBuyer = async (id) => {
-awaitupdateBuyer(id, newBuyer);
+  const handleUpdateBuyer = async (id) => {
+await updateBuyer(id, newBuyer);
 setNewBuyer({ name: '', email: '', phone: '' });
 fetchBuyers();
   };
  
-  consthandleDeleteBuyer = async (id) => {
-awaitdeleteBuyer(id);
+  const handleDeleteBuyer = async (id) => {
+await deleteBuyer(id);
 fetchBuyers();
   };
  
