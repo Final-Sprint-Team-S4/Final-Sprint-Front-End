@@ -16,7 +16,7 @@ const response = await getStocks();
 setStocks(response.data);
   };
   return (
-    <div><h2>Stocks</h2><ul>        {stocks.map(stock => (          <li key={stock.id}>            {stock.name} - ${stock.price}          </li> ))} </ul></div>
+    <div><h2>Stocks</h2><ul>        {stocks.map(stock => (          <li key={stock.id}>         {stock.id} - {stock.company} - {stock.symbol} - ${stock.price}          </li> ))} </ul></div>
   );
 }
 
