@@ -8,7 +8,10 @@ import {
 
 function Buyers() {
   const [buyers, setBuyers] = useState([]);
-  const [newBuyer, setNewBuyer] = useState({ name: "", email: "", phone: "" });
+  const [newBuyer, setNewBuyer] = useState({ name: "", stocks: [] });
+  const [stockSymbol, setStockSymbol] = useState("");
+  const [stockCompany, setStockCompany] = useState("");
+  const [stockPrice, setStockPrice] = useState("");
 
   useEffect(() => {
     fetchBuyers();
@@ -16,14 +19,35 @@ function Buyers() {
 
   const fetchBuyers = async () => {
     const response = await getBuyers();
+    console.log(response)
     console.log(response);
     setBuyers(response.data);
   };
 
   const handleCreateBuyer = async () => {
     await createBuyer(newBuyer);
-    setNewBuyer({ name: "", email: "", phone: "" });
+    setNewBuyer({ name: "", stocks:[] });
+    setStockSymbol("");
+    setStockCompany("");
+    setStockPrice("");
     fetchBuyers();
+  };
+
+  const handleAddStock = () => {
+    setNewBuyer(prevBuyer => ({
+      ...prevBuyer,
+      stocks: [...prevBuyer.stocks, {
+      
+        symbol: stockSymbol,
+        company: stockCompany,
+        price: parseFloat(stockPrice),
+        buyers: [] // Add buyers if needed
+      }]
+    }));
+    setStockSymbol("");
+    setStockCompany("");
+    setStockPrice("");
+    
   };
 
   const handleUpdateBuyer = async (id) => {
@@ -57,19 +81,33 @@ function Buyers() {
         placeholder="Name"
         value={newBuyer.name}
         onChange={(e) => setNewBuyer({ ...newBuyer, name: e.target.value })}
-      />{" "}
-      <input
-        type="text"
-        placeholder="Email"
-        value={newBuyer.email}
-        onChange={(e) => setNewBuyer({ ...newBuyer, email: e.target.value })}
-      />{" "}
+      />
       <input
         type="text"
         placeholder="Phone"
         value={newBuyer.phone}
         onChange={(e) => setNewBuyer({ ...newBuyer, phone: e.target.value })}
-      />{" "}
+      />
+      <h4>Stocks</h4>
+      <input
+        type="text"
+        placeholder="Stock Symbol"
+        value={stockSymbol}
+        onChange={(e) => setStockSymbol(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Stock Company"
+        value={stockCompany}
+        onChange={(e) => setStockCompany(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Stock Price"
+        value={stockPrice}
+        onChange={(e) => setStockPrice(e.target.value)}
+      />
+      <button onClick={handleAddStock}>Add Stock</button>
       <button onClick={handleCreateBuyer}>Add Buyer</button>
     </div>
   );
