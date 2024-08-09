@@ -1,5 +1,6 @@
 //App
 import React from 'react';
+import "./App.css";
 import Buyers from './components/Buyers';
 import Stock from './components/Stock';
 import StockMarket from './components/StockMarket';
