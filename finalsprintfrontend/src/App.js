@@ -1,9 +1,10 @@
 //App
-import React from 'react';
+import React from "react";
 import "./App.css";
-import Buyers from './components/Buyers';
-import Stock from './components/Stock';
-import StockMarket from './components/StockMarket';
+import Buyers from "./components/Buyers";
+import Stock from "./components/Stock";
+import StockMarket from "./components/StockMarket";
+import StockSearch from "./components/StockSearch";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Buyers />
       <Stock />
       <StockMarket />
+      <StockSearch />
     </div>
   );
 }
